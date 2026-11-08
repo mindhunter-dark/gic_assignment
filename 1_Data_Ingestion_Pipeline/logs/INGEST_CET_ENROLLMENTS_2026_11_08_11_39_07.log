@@ -1,0 +1,265 @@
+2026-11-08 11:39:07,569: Job started at 2026_11_08_11_39_07
+2026-11-08 11:39:07,569: Job ID - INGEST_CET_ENROLLMENTS_2026_11_08_11_39_07, Job Name - INGEST_CET_ENROLLMENTS
+2026-11-08 11:39:07,569: Job Source - CSV file - enrollments, Job Destination - SQLite DB - courses/enrollments
+2026-11-08 11:39:07,569: ----------------------------------------------------------------------------------------------------
+2026-11-08 11:39:07,569: Context Parameters:
+2026-11-08 11:39:07,569: Root folder  - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment
+2026-11-08 11:39:07,569: Source file path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\input\enrolments.csv
+2026-11-08 11:39:07,569: Target db path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\output\courses.db
+2026-11-08 11:39:07,569: Target table - enrollments
+2026-11-08 11:39:07,618: ----------------------------------------------------------------------------------------------------
+2026-11-08 11:39:07,618: Target database connection created  - <sqlite3.Connection object at 0x0000014E4D72F3D0>
+2026-11-08 11:39:07,660: Source file  has been read! 34 rows found
+2026-11-08 11:39:07,662: DELETEing using the query: DELETE FROM enrollments WHERE enrollment_id = ?
+2026-11-08 11:39:07,662: IDs to delete: [(1,), (2,), (3,), (4,), (5,), (6,), (7,), (8,), (9,), (10,), (11,), (12,), (13,), (14,), (15,), (16,), (17,), (18,), (19,), (20,), (21,), (22,), (23,), (24,), (25,), (26,), (27,), (28,), (29,), (30,), (31,), (32,), (33,), (34,)]
+2026-11-08 11:39:07,662: DELETE successful! 34 rows deleted
+2026-11-08 11:39:07,694: course_date    15/01/2024
+Name: 0, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,698: course_date    2024-01-15
+Name: 1, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,701: course_date    20 Jan 2024
+Name: 2, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,701: course_date    2024-01-25
+Name: 3, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,701: course_date    01-02-2024
+Name: 4, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,701: course_date    2024/02/01
+Name: 5, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,701: course_date    10 Feb 2024
+Name: 6, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,701: course_date    2024-02-15
+Name: 7, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,701: course_date    20/02/2024
+Name: 8, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,701: course_date    2024-03-05
+Name: 9, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,710: course_date    15/03/2024
+Name: 10, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,710: course_date    2024-03-20
+Name: 11, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,710: course_date    25 Mar 2024
+Name: 12, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,710: course_date    2024/04/01
+Name: 13, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,714: course_date    01-04-2024
+Name: 14, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,714: course_date    2024-04-05
+Name: 15, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,716: course_date    10/04/2024
+Name: 16, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,716: course_date    2024-04-15
+Name: 17, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,718: course_date    22/04/2024
+Name: 18, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,718: course_date    01 May 2024
+Name: 19, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,718: course_date    2023-02-29
+Name: 20, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,718: course_date    2024/05/15
+Name: 21, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,718: course_date    20-05-2024
+Name: 22, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,718: course_date    25/05/2024
+Name: 23, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,718: course_date    01 Jun 2024
+Name: 24, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,726: course_date    1900-06-10
+Name: 25, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,726: course_date    2024-06-15
+Name: 26, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,730: course_date    2024/06/20
+Name: 27, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,732: course_date    01-07-2024
+Name: 28, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,735: course_date    2024-07-01
+Name: 29, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,735: course_date    05 Jul 2024
+Name: 30, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,735: course_date    10/07/2024
+Name: 31, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,735: course_date    2024-07-15
+Name: 32, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,739: course_date    2024-07-20
+Name: 33, dtype: str - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:39:07,750: INSERTing using the query: INSERT INTO enrollments (enrollment_id, participant_id, participant_name, course_id, course_date, amount, subsidy, credits_used) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+2026-11-08 11:39:07,763: INSERT unsuccessful!
+2026-11-08 11:39:07,763: None
+2026-11-08 11:39:11,361: No such comm target registered: jupyter.widget.control
+2026-11-08 11:39:11,367: No such comm: a510239b-f9b3-41f9-8219-6d5874e7ba6a
+2026-11-08 11:42:04,081: 2024-05-15 - Parsed using the format %Y-%m-%d
+2026-11-08 11:42:56,560: Job started at 2026_11_08_11_42_56
+2026-11-08 11:42:56,560: Job ID - INGEST_CET_ENROLLMENTS_2026_11_08_11_42_56, Job Name - INGEST_CET_ENROLLMENTS
+2026-11-08 11:42:56,560: Job Source - CSV file - enrollments, Job Destination - SQLite DB - courses/enrollments
+2026-11-08 11:42:56,569: ----------------------------------------------------------------------------------------------------
+2026-11-08 11:42:56,569: Context Parameters:
+2026-11-08 11:42:56,569: Root folder  - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment
+2026-11-08 11:42:56,569: Source file path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\input\enrolments.csv
+2026-11-08 11:42:56,569: Target db path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\output\courses.db
+2026-11-08 11:42:56,569: Target table - enrollments
+2026-11-08 11:42:56,643: ----------------------------------------------------------------------------------------------------
+2026-11-08 11:42:56,652: Target database connection created  - <sqlite3.Connection object at 0x0000014E4E759B70>
+2026-11-08 11:42:56,660: Source file  has been read! 34 rows found
+2026-11-08 11:42:56,660: DELETEing using the query: DELETE FROM enrollments WHERE enrollment_id = ?
+2026-11-08 11:42:56,660: IDs to delete: [(1,), (2,), (3,), (4,), (5,), (6,), (7,), (8,), (9,), (10,), (11,), (12,), (13,), (14,), (15,), (16,), (17,), (18,), (19,), (20,), (21,), (22,), (23,), (24,), (25,), (26,), (27,), (28,), (29,), (30,), (31,), (32,), (33,), (34,)]
+2026-11-08 11:42:56,660: DELETE successful! 34 rows deleted
+2026-11-08 11:42:56,665: 15/01/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 11:42:56,665: 2024-01-15 - Parsed using the format %Y-%m-%d
+2026-11-08 11:42:56,665: 20 Jan 2024 - Parsed using the format %d %b %Y
+2026-11-08 11:42:56,665: 2024-01-25 - Parsed using the format %Y-%m-%d
+2026-11-08 11:42:56,665: 01-02-2024 - Parsed using the format %d-%m-%Y
+2026-11-08 11:42:56,665: 2024/02/01 - Parsed using the format %Y/%m/%d
+2026-11-08 11:42:56,665: 10 Feb 2024 - Parsed using the format %d %b %Y
+2026-11-08 11:42:56,665: 2024-02-15 - Parsed using the format %Y-%m-%d
+2026-11-08 11:42:56,665: 20/02/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 11:42:56,673: 2024-03-05 - Parsed using the format %Y-%m-%d
+2026-11-08 11:42:56,673: 15/03/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 11:42:56,673: 2024-03-20 - Parsed using the format %Y-%m-%d
+2026-11-08 11:42:56,673: 25 Mar 2024 - Parsed using the format %d %b %Y
+2026-11-08 11:42:56,673: 2024/04/01 - Parsed using the format %Y/%m/%d
+2026-11-08 11:42:56,675: 01-04-2024 - Parsed using the format %d-%m-%Y
+2026-11-08 11:42:56,675: 2024-04-05 - Parsed using the format %Y-%m-%d
+2026-11-08 11:42:56,675: 10/04/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 11:42:56,675: 2024-04-15 - Parsed using the format %Y-%m-%d
+2026-11-08 11:42:56,675: 22/04/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 11:42:56,675: 01 May 2024 - Parsed using the format %d %b %Y
+2026-11-08 11:42:56,675: 2023-02-29 - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:42:56,675: 2024/05/15 - Parsed using the format %Y/%m/%d
+2026-11-08 11:42:56,675: 20-05-2024 - Parsed using the format %d-%m-%Y
+2026-11-08 11:42:56,675: 25/05/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 11:42:56,675: 01 Jun 2024 - Parsed using the format %d %b %Y
+2026-11-08 11:42:56,675: 1900-06-10 - Parsed using the format %Y-%m-%d
+2026-11-08 11:42:56,675: 2024-06-15 - Parsed using the format %Y-%m-%d
+2026-11-08 11:42:56,675: 2024/06/20 - Parsed using the format %Y/%m/%d
+2026-11-08 11:42:56,675: 01-07-2024 - Parsed using the format %d-%m-%Y
+2026-11-08 11:42:56,675: 2024-07-01 - Parsed using the format %Y-%m-%d
+2026-11-08 11:42:56,675: 05 Jul 2024 - Parsed using the format %d %b %Y
+2026-11-08 11:42:56,675: 10/07/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 11:42:56,675: 2024-07-15 - Parsed using the format %Y-%m-%d
+2026-11-08 11:42:56,675: 2024-07-20 - Parsed using the format %Y-%m-%d
+2026-11-08 11:42:56,691: INSERTing using the query: INSERT INTO enrollments (enrollment_id, participant_id, participant_name, course_id, course_date, amount, subsidy, credits_used) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+2026-11-08 11:42:56,707: INSERT unsuccessful!
+2026-11-08 11:42:56,707: None
+2026-11-08 11:51:51,667: Job started at 2026_11_08_11_51_51
+2026-11-08 11:51:51,667: Job ID - INGEST_CET_ENROLLMENTS_2026_11_08_11_51_51, Job Name - INGEST_CET_ENROLLMENTS
+2026-11-08 11:51:51,669: Job Source - CSV file - enrollments, Job Destination - SQLite DB - courses/enrollments
+2026-11-08 11:51:51,669: ----------------------------------------------------------------------------------------------------
+2026-11-08 11:51:51,669: Context Parameters:
+2026-11-08 11:51:51,671: Root folder  - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment
+2026-11-08 11:51:51,673: Source file path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\input\enrolments.csv
+2026-11-08 11:51:51,673: Target db path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\output\courses.db
+2026-11-08 11:51:51,673: Target table - enrollments
+2026-11-08 11:51:51,688: ----------------------------------------------------------------------------------------------------
+2026-11-08 11:51:51,688: Target database connection created  - <sqlite3.Connection object at 0x0000014E4D72E980>
+2026-11-08 11:51:51,701: Source file  has been read! 34 rows found
+2026-11-08 11:51:51,701: DELETEing using the query: DELETE FROM enrollments WHERE enrollment_id = ?
+2026-11-08 11:51:51,701: IDs to delete: [(1,), (2,), (3,), (4,), (5,), (6,), (7,), (8,), (9,), (10,), (11,), (12,), (13,), (14,), (15,), (16,), (17,), (18,), (19,), (20,), (21,), (22,), (23,), (24,), (25,), (26,), (27,), (28,), (29,), (30,), (31,), (32,), (33,), (34,)]
+2026-11-08 11:51:51,701: DELETE successful! 34 rows deleted
+2026-11-08 11:51:51,712: 15/01/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 11:51:51,716: 2024-01-15 - Parsed using the format %Y-%m-%d
+2026-11-08 11:51:51,716: 20 Jan 2024 - Parsed using the format %d %b %Y
+2026-11-08 11:51:51,716: 2024-01-25 - Parsed using the format %Y-%m-%d
+2026-11-08 11:51:51,716: 01-02-2024 - Parsed using the format %d-%m-%Y
+2026-11-08 11:51:51,716: 2024/02/01 - Parsed using the format %Y/%m/%d
+2026-11-08 11:51:51,716: 10 Feb 2024 - Parsed using the format %d %b %Y
+2026-11-08 11:51:51,716: 2024-02-15 - Parsed using the format %Y-%m-%d
+2026-11-08 11:51:51,716: 20/02/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 11:51:51,716: 2024-03-05 - Parsed using the format %Y-%m-%d
+2026-11-08 11:51:51,716: 15/03/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 11:51:51,716: 2024-03-20 - Parsed using the format %Y-%m-%d
+2026-11-08 11:51:51,720: 25 Mar 2024 - Parsed using the format %d %b %Y
+2026-11-08 11:51:51,720: 2024/04/01 - Parsed using the format %Y/%m/%d
+2026-11-08 11:51:51,720: 01-04-2024 - Parsed using the format %d-%m-%Y
+2026-11-08 11:51:51,720: 2024-04-05 - Parsed using the format %Y-%m-%d
+2026-11-08 11:51:51,720: 10/04/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 11:51:51,720: 2024-04-15 - Parsed using the format %Y-%m-%d
+2026-11-08 11:51:51,720: 22/04/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 11:51:51,720: 01 May 2024 - Parsed using the format %d %b %Y
+2026-11-08 11:51:51,720: 2023-02-29 - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:51:51,720: 2024/05/15 - Parsed using the format %Y/%m/%d
+2026-11-08 11:51:51,720: 20-05-2024 - Parsed using the format %d-%m-%Y
+2026-11-08 11:51:51,720: 25/05/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 11:51:51,720: 01 Jun 2024 - Parsed using the format %d %b %Y
+2026-11-08 11:51:51,720: 1900-06-10 - Parsed using the format %Y-%m-%d
+2026-11-08 11:51:51,720: 2024-06-15 - Parsed using the format %Y-%m-%d
+2026-11-08 11:51:51,720: 2024/06/20 - Parsed using the format %Y/%m/%d
+2026-11-08 11:51:51,720: 01-07-2024 - Parsed using the format %d-%m-%Y
+2026-11-08 11:51:51,729: 2024-07-01 - Parsed using the format %Y-%m-%d
+2026-11-08 11:51:51,729: 05 Jul 2024 - Parsed using the format %d %b %Y
+2026-11-08 11:51:51,729: 10/07/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 11:51:51,729: 2024-07-15 - Parsed using the format %Y-%m-%d
+2026-11-08 11:51:51,729: 2024-07-20 - Parsed using the format %Y-%m-%d
+2026-11-08 11:51:51,729: INSERTing using the query: INSERT INTO enrollments (enrollment_id, participant_id, participant_name, course_id, course_date, amount, subsidy, credits_used) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+2026-11-08 11:51:51,737: INSERT unsuccessful!
+2026-11-08 11:51:51,737: None
+2026-11-08 11:57:54,475: Job started at 2026_11_08_11_57_54
+2026-11-08 11:57:54,475: Job ID - INGEST_CET_ENROLLMENTS_2026_11_08_11_57_54, Job Name - INGEST_CET_ENROLLMENTS
+2026-11-08 11:57:54,475: Job Source - CSV file - enrollments, Job Destination - SQLite DB - courses/enrollments
+2026-11-08 11:57:54,475: ----------------------------------------------------------------------------------------------------
+2026-11-08 11:57:54,477: Context Parameters:
+2026-11-08 11:57:54,477: Root folder  - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment
+2026-11-08 11:57:54,477: Source file path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\input\enrolments.csv
+2026-11-08 11:57:54,477: Target db path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\output\courses.db
+2026-11-08 11:57:54,477: Target table - enrollments
+2026-11-08 11:57:54,497: ----------------------------------------------------------------------------------------------------
+2026-11-08 11:57:54,497: Target database connection created  - <sqlite3.Connection object at 0x0000014E4E7598A0>
+2026-11-08 11:57:54,506: Source file  has been read! 34 rows found
+2026-11-08 11:57:54,506: DELETEing using the query: DELETE FROM enrollments WHERE enrollment_id = ?
+2026-11-08 11:57:54,506: IDs to delete: [(1,), (2,), (3,), (4,), (5,), (6,), (7,), (8,), (9,), (10,), (11,), (12,), (13,), (14,), (15,), (16,), (17,), (18,), (19,), (20,), (21,), (22,), (23,), (24,), (25,), (26,), (27,), (28,), (29,), (30,), (31,), (32,), (33,), (34,)]
+2026-11-08 11:57:54,506: DELETE successful! 34 rows deleted
+2026-11-08 11:57:54,520: 15/01/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 11:57:54,520: 2024-01-15 - Parsed using the format %Y-%m-%d
+2026-11-08 11:57:54,520: 20 Jan 2024 - Parsed using the format %d %b %Y
+2026-11-08 11:57:54,520: 2024-01-25 - Parsed using the format %Y-%m-%d
+2026-11-08 11:57:54,520: 01-02-2024 - Parsed using the format %d-%m-%Y
+2026-11-08 11:57:54,520: 2024/02/01 - Parsed using the format %Y/%m/%d
+2026-11-08 11:57:54,520: 10 Feb 2024 - Parsed using the format %d %b %Y
+2026-11-08 11:57:54,520: 2024-02-15 - Parsed using the format %Y-%m-%d
+2026-11-08 11:57:54,520: 20/02/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 11:57:54,520: 2024-03-05 - Parsed using the format %Y-%m-%d
+2026-11-08 11:57:54,520: 15/03/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 11:57:54,520: 2024-03-20 - Parsed using the format %Y-%m-%d
+2026-11-08 11:57:54,520: 25 Mar 2024 - Parsed using the format %d %b %Y
+2026-11-08 11:57:54,520: 2024/04/01 - Parsed using the format %Y/%m/%d
+2026-11-08 11:57:54,528: 01-04-2024 - Parsed using the format %d-%m-%Y
+2026-11-08 11:57:54,528: 2024-04-05 - Parsed using the format %Y-%m-%d
+2026-11-08 11:57:54,528: 10/04/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 11:57:54,528: 2024-04-15 - Parsed using the format %Y-%m-%d
+2026-11-08 11:57:54,528: 22/04/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 11:57:54,528: 01 May 2024 - Parsed using the format %d %b %Y
+2026-11-08 11:57:54,528: 2023-02-29 - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 11:57:54,528: 2024/05/15 - Parsed using the format %Y/%m/%d
+2026-11-08 11:57:54,528: 20-05-2024 - Parsed using the format %d-%m-%Y
+2026-11-08 11:57:54,528: 25/05/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 11:57:54,528: 01 Jun 2024 - Parsed using the format %d %b %Y
+2026-11-08 11:57:54,528: 1900-06-10 - Parsed using the format %Y-%m-%d
+2026-11-08 11:57:54,528: 2024-06-15 - Parsed using the format %Y-%m-%d
+2026-11-08 11:57:54,528: 2024/06/20 - Parsed using the format %Y/%m/%d
+2026-11-08 11:57:54,528: 01-07-2024 - Parsed using the format %d-%m-%Y
+2026-11-08 11:57:54,528: 2024-07-01 - Parsed using the format %Y-%m-%d
+2026-11-08 11:57:54,537: 05 Jul 2024 - Parsed using the format %d %b %Y
+2026-11-08 11:57:54,537: 10/07/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 11:57:54,537: 2024-07-15 - Parsed using the format %Y-%m-%d
+2026-11-08 11:57:54,537: 2024-07-20 - Parsed using the format %Y-%m-%d
+2026-11-08 11:57:54,545: INSERTing using the query: INSERT INTO enrollments (enrollment_id, participant_id, participant_name, course_id, course_date, amount, subsidy, credits_used) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+2026-11-08 11:57:54,561: INSERT unsuccessful!
+2026-11-08 11:57:54,561: None
+2026-11-08 12:03:48,340: Job started at 2026_11_08_12_03_48
+2026-11-08 12:03:48,343: Job ID - INGEST_CET_ENROLLMENTS_2026_11_08_12_03_48, Job Name - INGEST_CET_ENROLLMENTS
+2026-11-08 12:03:48,343: Job Source - CSV file - enrollments, Job Destination - SQLite DB - courses/enrollments
+2026-11-08 12:03:48,343: ----------------------------------------------------------------------------------------------------
+2026-11-08 12:03:48,343: Context Parameters:
+2026-11-08 12:03:48,343: Root folder  - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment
+2026-11-08 12:03:48,343: Source file path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\input\enrolments.csv
+2026-11-08 12:03:48,343: Target db path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\output\courses.db
+2026-11-08 12:03:48,343: Target table - enrollments
+2026-11-08 12:03:48,454: ----------------------------------------------------------------------------------------------------
+2026-11-08 12:03:48,455: Target database connection created  - <sqlite3.Connection object at 0x0000014E4EABDB70>
+2026-11-08 12:03:48,478: Source file  has been read! 34 rows found
+2026-11-08 12:03:48,478: DELETEing using the query: DELETE FROM enrollments WHERE enrollment_id = ?
+2026-11-08 12:03:48,478: IDs to delete: [(1,), (2,), (3,), (4,), (5,), (6,), (7,), (8,), (9,), (10,), (11,), (12,), (13,), (14,), (15,), (16,), (17,), (18,), (19,), (20,), (21,), (22,), (23,), (24,), (25,), (26,), (27,), (28,), (29,), (30,), (31,), (32,), (33,), (34,)]
+2026-11-08 12:03:54,268: DELETE unsuccessful!
+2026-11-08 12:03:54,268: Traceback (most recent call last):
+  File "C:\Users\tatil\AppData\Local\Temp\ipykernel_2344\2706648881.py", line 57, in execute_db_delete
+    cur.executemany(query, ids)
+sqlite3.OperationalError: database is locked
+

@@ -90,3 +90,79 @@
 2026-11-08 10:59:05,491: IDs to delete: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34]
 2026-11-08 10:59:05,491: DELETE unsuccessful!
 2026-11-08 10:59:05,491: None
+2026-11-08 11:31:03,850: Job started at 2026_11_08_11_31_03
+2026-11-08 11:31:03,864: Job ID - INGEST_CET_ENROLLMENTS_2026_11_08_11_31_03, Job Name - INGEST_CET_ENROLLMENTS
+2026-11-08 11:31:03,864: Job Source - CSV file - enrollments, Job Destination - SQLite DB - courses/enrollments
+2026-11-08 11:31:03,869: ----------------------------------------------------------------------------------------------------
+2026-11-08 11:31:03,869: Context Parameters:
+2026-11-08 11:31:03,869: Root folder  - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment
+2026-11-08 11:31:03,872: Source file path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\input\enrolments.csv
+2026-11-08 11:31:03,872: Target db path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\output\courses.db
+2026-11-08 11:31:03,872: Target table - enrollments
+2026-11-08 11:31:03,916: ----------------------------------------------------------------------------------------------------
+2026-11-08 11:31:03,918: Target database connection created  - <sqlite3.Connection object at 0x00000139A3F3FB50>
+2026-11-08 11:31:03,968: Source file  has been read! 34 rows found
+2026-11-08 11:31:03,968: DELETEing using the query: DELETE FROM enrollments WHERE enrollment_id = ?
+2026-11-08 11:31:03,968: IDs to delete: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34]
+2026-11-08 11:31:03,976: DELETE unsuccessful!
+2026-11-08 11:31:03,981: None
+2026-11-08 11:32:09,677: Job started at 2026_11_08_11_32_09
+2026-11-08 11:32:09,677: Job ID - INGEST_CET_ENROLLMENTS_2026_11_08_11_32_09, Job Name - INGEST_CET_ENROLLMENTS
+2026-11-08 11:32:09,677: Job Source - CSV file - enrollments, Job Destination - SQLite DB - courses/enrollments
+2026-11-08 11:32:09,677: ----------------------------------------------------------------------------------------------------
+2026-11-08 11:32:09,686: Context Parameters:
+2026-11-08 11:32:09,686: Root folder  - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment
+2026-11-08 11:32:09,694: Source file path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\input\enrolments.csv
+2026-11-08 11:32:09,694: Target db path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\output\courses.db
+2026-11-08 11:32:09,694: Target table - enrollments
+2026-11-08 11:32:09,759: ----------------------------------------------------------------------------------------------------
+2026-11-08 11:32:09,759: Target database connection created  - <sqlite3.Connection object at 0x00000139A40A2C50>
+2026-11-08 11:32:09,771: Source file  has been read! 34 rows found
+2026-11-08 11:32:09,772: DELETEing using the query: DELETE FROM enrollments WHERE enrollment_id = ?
+2026-11-08 11:32:09,772: IDs to delete: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34]
+2026-11-08 11:32:09,772: DELETE unsuccessful!
+2026-11-08 11:32:09,778: None
+2026-11-08 11:35:47,362: Job started at 2026_11_08_11_35_47
+2026-11-08 11:35:47,362: Job ID - INGEST_CET_ENROLLMENTS_2026_11_08_11_35_47, Job Name - INGEST_CET_ENROLLMENTS
+2026-11-08 11:35:47,362: Job Source - CSV file - enrollments, Job Destination - SQLite DB - courses/enrollments
+2026-11-08 11:35:47,362: ----------------------------------------------------------------------------------------------------
+2026-11-08 11:35:47,362: Context Parameters:
+2026-11-08 11:35:47,362: Root folder  - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment
+2026-11-08 11:35:47,362: Source file path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\input\enrolments.csv
+2026-11-08 11:35:47,375: Target db path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\output\courses.db
+2026-11-08 11:35:47,375: Target table - enrollments
+2026-11-08 11:35:47,394: ----------------------------------------------------------------------------------------------------
+2026-11-08 11:35:47,396: Target database connection created  - <sqlite3.Connection object at 0x00000139A1E858A0>
+2026-11-08 11:35:47,402: Source file  has been read! 34 rows found
+2026-11-08 11:35:47,403: DELETEing using the query: DELETE FROM enrollments WHERE enrollment_id = ?
+2026-11-08 11:35:47,403: IDs to delete: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34)
+2026-11-08 11:35:47,403: DELETE unsuccessful!
+2026-11-08 11:35:47,403: None
+2026-11-08 11:37:06,529: Job started at 2026_11_08_11_37_06
+2026-11-08 11:37:06,529: Job ID - INGEST_CET_ENROLLMENTS_2026_11_08_11_37_06, Job Name - INGEST_CET_ENROLLMENTS
+2026-11-08 11:37:06,539: Job Source - CSV file - enrollments, Job Destination - SQLite DB - courses/enrollments
+2026-11-08 11:37:06,539: ----------------------------------------------------------------------------------------------------
+2026-11-08 11:37:06,539: Context Parameters:
+2026-11-08 11:37:06,539: Root folder  - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment
+2026-11-08 11:37:06,539: Source file path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\input\enrolments.csv
+2026-11-08 11:37:06,539: Target db path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\output\courses.db
+2026-11-08 11:37:06,539: Target table - enrollments
+2026-11-08 11:37:06,610: ----------------------------------------------------------------------------------------------------
+2026-11-08 11:37:06,618: Target database connection created  - <sqlite3.Connection object at 0x00000139A46DA4D0>
+2026-11-08 11:37:06,628: Source file  has been read! 34 rows found
+2026-11-08 11:37:29,352: Job started at 2026_11_08_11_37_29
+2026-11-08 11:37:29,352: Job ID - INGEST_CET_ENROLLMENTS_2026_11_08_11_37_29, Job Name - INGEST_CET_ENROLLMENTS
+2026-11-08 11:37:29,352: Job Source - CSV file - enrollments, Job Destination - SQLite DB - courses/enrollments
+2026-11-08 11:37:29,352: ----------------------------------------------------------------------------------------------------
+2026-11-08 11:37:29,352: Context Parameters:
+2026-11-08 11:37:29,352: Root folder  - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment
+2026-11-08 11:37:29,352: Source file path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\input\enrolments.csv
+2026-11-08 11:37:29,352: Target db path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\output\courses.db
+2026-11-08 11:37:29,352: Target table - enrollments
+2026-11-08 11:37:29,387: ----------------------------------------------------------------------------------------------------
+2026-11-08 11:37:29,388: Target database connection created  - <sqlite3.Connection object at 0x00000139A3F3D5D0>
+2026-11-08 11:37:29,388: Source file  has been read! 34 rows found
+2026-11-08 11:37:29,397: DELETEing using the query: DELETE FROM enrollments WHERE enrollment_id = ?
+2026-11-08 11:37:29,397: IDs to delete: [(1,), (2,), (3,), (4,), (5,), (6,), (7,), (8,), (9,), (10,), (11,), (12,), (13,), (14,), (15,), (16,), (17,), (18,), (19,), (20,), (21,), (22,), (23,), (24,), (25,), (26,), (27,), (28,), (29,), (30,), (31,), (32,), (33,), (34,)]
+2026-11-08 11:37:35,054: DELETE unsuccessful!
+2026-11-08 11:37:35,054: None
