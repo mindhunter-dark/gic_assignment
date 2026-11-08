@@ -98,10 +98,12 @@ Data Quality Checks::
         -- If fails, quarantine and alert to source as this is an important metric
     -- Check if subsidy is valid and can be parsed into a decimal value, or is null (as the
         enrollee may not have been eligible for a subsidy)
-        -- If fails, quarantine and alert to source as this is an important metric
+        -- If not parseable, quarantine and alert to source as this is an important metric.
+            If NULL, continue ingestion
     -- Check if credits_used is valid and can be parsed into a decimal value, or is null 
         (as the enrollee may not have had nay credits left)
-        -- If fails, quarantine and alert to source as this is an important metric
+        -- If not parseable, quarantine and alert to source as this is an important metric.
+            If NULL, continue ingestion
 Transformations::
 -- Data casting and tranformations
     -- In table dim_course
