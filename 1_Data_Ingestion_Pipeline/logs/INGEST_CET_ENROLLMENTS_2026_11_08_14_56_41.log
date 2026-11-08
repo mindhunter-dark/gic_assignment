@@ -1,0 +1,110 @@
+2026-11-08 14:56:41,079 - INFO: Job started at 2026_11_08_14_56_41
+2026-11-08 14:56:41,080 - INFO: Job ID - INGEST_CET_ENROLLMENTS_2026_11_08_14_56_41, Job Name - INGEST_CET_ENROLLMENTS
+2026-11-08 14:56:41,080 - INFO: Job Source - CSV file - enrollments, Job Destination - SQLite DB - courses/enrollments
+2026-11-08 14:56:41,080 - INFO: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:56:41,080 - INFO: Context Parameters:
+2026-11-08 14:56:41,080 - INFO: Root folder  - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment
+2026-11-08 14:56:41,081 - INFO: Source file path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\input\enrolments.csv
+2026-11-08 14:56:41,081 - INFO: Target db path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\output\courses.db
+2026-11-08 14:56:41,081 - INFO: Target table - enrollments
+2026-11-08 14:56:41,081 - INFO: Log file path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\1_Data_Ingestion_Pipeline\logs\INGEST_CET_ENROLLMENTS_2026_11_08_14_56_41.log
+2026-11-08 14:56:41,101 - INFO: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:56:41,101 - INFO: Target database connection created  - <sqlite3.Connection object at 0x000001BAD4A59D50>
+2026-11-08 14:56:41,101 - INFO: Source file  has been read! 34 rows found
+2026-11-08 14:56:41,101 - INFO: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:56:41,101 - INFO: DELETEing using the query: DELETE FROM enrollments WHERE enrollment_id = ?
+2026-11-08 14:56:41,101 - INFO: IDs to delete: [(1,), (2,), (3,), (4,), (5,), (6,), (7,), (8,), (9,), (10,), (11,), (12,), (13,), (14,), (15,), (16,), (17,), (18,), (19,), (20,), (21,), (22,), (23,), (24,), (25,), (26,), (27,), (28,), (29,), (30,), (31,), (32,), (33,), (34,)]
+2026-11-08 14:56:41,112 - INFO: DELETE successful! 34 rows deleted
+2026-11-08 14:56:41,112 - INFO: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:56:41,112 - INFO: Parse the course_date column and standardize the format...
+2026-11-08 14:56:41,120 - INFO: 15/01/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 14:56:41,120 - INFO: 2024-01-15 - Parsed using the format %Y-%m-%d
+2026-11-08 14:56:41,120 - INFO: 20 Jan 2024 - Parsed using the format %d %b %Y
+2026-11-08 14:56:41,120 - INFO: 2024-01-25 - Parsed using the format %Y-%m-%d
+2026-11-08 14:56:41,120 - INFO: 01-02-2024 - Parsed using the format %d-%m-%Y
+2026-11-08 14:56:41,120 - INFO: 2024/02/01 - Parsed using the format %Y/%m/%d
+2026-11-08 14:56:41,120 - INFO: 10 Feb 2024 - Parsed using the format %d %b %Y
+2026-11-08 14:56:41,120 - INFO: 2024-02-15 - Parsed using the format %Y-%m-%d
+2026-11-08 14:56:41,120 - INFO: 20/02/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 14:56:41,120 - INFO: 2024-03-05 - Parsed using the format %Y-%m-%d
+2026-11-08 14:56:41,120 - INFO: 15/03/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 14:56:41,120 - INFO: 2024-03-20 - Parsed using the format %Y-%m-%d
+2026-11-08 14:56:41,120 - INFO: 25 Mar 2024 - Parsed using the format %d %b %Y
+2026-11-08 14:56:41,120 - INFO: 2024/04/01 - Parsed using the format %Y/%m/%d
+2026-11-08 14:56:41,120 - INFO: 01-04-2024 - Parsed using the format %d-%m-%Y
+2026-11-08 14:56:41,120 - INFO: 2024-04-05 - Parsed using the format %Y-%m-%d
+2026-11-08 14:56:41,120 - INFO: 10/04/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 14:56:41,120 - INFO: 2024-04-15 - Parsed using the format %Y-%m-%d
+2026-11-08 14:56:41,120 - INFO: 22/04/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 14:56:41,120 - INFO: 01 May 2024 - Parsed using the format %d %b %Y
+2026-11-08 14:56:41,120 - WARNING: 2023-02-29 - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 14:56:41,120 - INFO: 2024/05/15 - Parsed using the format %Y/%m/%d
+2026-11-08 14:56:41,120 - INFO: 20-05-2024 - Parsed using the format %d-%m-%Y
+2026-11-08 14:56:41,120 - INFO: 25/05/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 14:56:41,120 - INFO: 01 Jun 2024 - Parsed using the format %d %b %Y
+2026-11-08 14:56:41,120 - INFO: 1900-06-10 - Parsed using the format %Y-%m-%d
+2026-11-08 14:56:41,120 - INFO: 2024-06-15 - Parsed using the format %Y-%m-%d
+2026-11-08 14:56:41,120 - INFO: 2024/06/20 - Parsed using the format %Y/%m/%d
+2026-11-08 14:56:41,120 - INFO: 01-07-2024 - Parsed using the format %d-%m-%Y
+2026-11-08 14:56:41,120 - INFO: 2024-07-01 - Parsed using the format %Y-%m-%d
+2026-11-08 14:56:41,120 - INFO: 05 Jul 2024 - Parsed using the format %d %b %Y
+2026-11-08 14:56:41,120 - INFO: 10/07/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 14:56:41,120 - INFO: 2024-07-15 - Parsed using the format %Y-%m-%d
+2026-11-08 14:56:41,120 - INFO: 2024-07-20 - Parsed using the format %Y-%m-%d
+2026-11-08 14:56:41,120 - INFO: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:56:41,120 - INFO: Starting data quality checks...
+2026-11-08 14:56:41,137 - INFO: Check 1: The course date could not be parsed
+1 rows found
+    enrollment_id participant_id participant_name  course_id course_date  \
+20             21           P005       Edward Goh          5  2023-02-29   
+
+    amount  subsidy  credits_used course_date_cleaned  \
+20   900.0    500.0         400.0                 NaN   
+
+                                         Failed_Check  
+20  The course date could not be parsed. The forma...  
+2026-11-08 14:56:41,145 - INFO: Check 2: Date older than SkillsFuture portal
+1 rows found
+    enrollment_id participant_id participant_name  course_id course_date  \
+25             26           P001        Alice Tan          4  1900-06-10   
+
+    amount  subsidy  credits_used course_date_cleaned  \
+25   800.0    300.0         500.0          1900-06-10   
+
+                            Failed_Check  
+25  Date older than SkillsFuture portal!  
+2026-11-08 14:56:41,157 - INFO: Check 3: Unable to cast fields to the correct type
+0 rows found
+Empty DataFrame
+Columns: [enrollment_id, participant_id, participant_name, course_id, course_date, amount, subsidy, credits_used, Failed_Check]
+Index: []
+2026-11-08 14:56:41,160 - INFO: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:56:41,160 - INFO: EXECUTEing the query: 
+                                                    CREATE TABLE IF NOT EXISTS enrollments_quarantine (
+                                                        enrollment_id TEXT,
+                                                        participant_id TEXT,
+                                                        participant_name TEXT,
+                                                        course_id TEXT,
+                                                        course_date TEXT,
+                                                        amount TEXT,
+                                                        subsidy TEXT,
+                                                        credits_used TEXT,
+                                                        Failed_Check TEXT,
+                                                        Record_Created_In_Job_ID TEXT,
+                                                        Record_Created_On TEXT
+                                                    )
+                                                
+2026-11-08 14:56:41,161 - INFO: EXECUTE successful!
+2026-11-08 14:56:41,162 - INFO: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:56:41,162 - INFO: INSERTing using the query: INSERT INTO enrollments_quarantine (enrollment_id, participant_id, participant_name, course_id, course_date, amount, subsidy, credits_used, Failed_Check, Record_Created_In_Job_ID, Record_Created_On) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-11-08 14:56:41,168 - INFO: INSERT successful! 2 rows inserted
+2026-11-08 14:56:41,168 - INFO: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:56:41,168 - INFO: INSERTing using the query: INSERT INTO enrollments (enrollment_id, participant_id, participant_name, course_id, course_date, amount, subsidy, credits_used) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+2026-11-08 14:56:41,174 - INFO: INSERT successful! 32 rows inserted
+2026-11-08 14:56:41,174 - INFO: Pipeline complete! Exiting...
+2026-11-08 14:56:41,187 - INFO: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:56:41,187 - INFO: Running the SELECT query: SELECT * FROM enrollments
+2026-11-08 14:56:41,190 - INFO: SELECT successful! 32 rows returned
+2026-11-08 14:56:41,214 - INFO: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:56:41,215 - INFO: Running the SELECT query: SELECT * FROM enrollments_quarantine
+2026-11-08 14:56:41,219 - INFO: SELECT successful! 4 rows returned

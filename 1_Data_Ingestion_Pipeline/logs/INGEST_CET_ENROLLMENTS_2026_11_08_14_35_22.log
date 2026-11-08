@@ -1,0 +1,10 @@
+2026-11-08 14:35:22,863: Job started at 2026_11_08_14_35_22
+2026-11-08 14:35:22,863: Job ID - INGEST_CET_ENROLLMENTS_2026_11_08_14_35_22, Job Name - INGEST_CET_ENROLLMENTS
+2026-11-08 14:35:22,863: Job Source - CSV file - enrollments, Job Destination - SQLite DB - courses/enrollments
+2026-11-08 14:35:22,863: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:35:22,863: Context Parameters:
+2026-11-08 14:35:22,863: Root folder  - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment
+2026-11-08 14:35:22,863: Source file path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\input\enrolments.csv
+2026-11-08 14:35:22,863: Target db path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\output\courses.db
+2026-11-08 14:35:22,863: Target table - enrollments
+2026-11-08 14:35:22,863: Log file path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\1_Data_Ingestion_Pipeline\logs\INGEST_CET_ENROLLMENTS_2026_11_08_14_35_22.log

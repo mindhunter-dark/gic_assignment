@@ -1,0 +1,76 @@
+2026-11-08 14:35:53,008: Job started at 2026_11_08_14_35_52
+2026-11-08 14:35:53,008: Job ID - INGEST_CET_ENROLLMENTS_2026_11_08_14_35_52, Job Name - INGEST_CET_ENROLLMENTS
+2026-11-08 14:35:53,008: Job Source - CSV file - enrollments, Job Destination - SQLite DB - courses/enrollments
+2026-11-08 14:35:53,008: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:35:53,008: Context Parameters:
+2026-11-08 14:35:53,008: Root folder  - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment
+2026-11-08 14:35:53,008: Source file path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\input\enrolments.csv
+2026-11-08 14:35:53,008: Target db path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\output\courses.db
+2026-11-08 14:35:53,008: Target table - enrollments
+2026-11-08 14:35:53,008: Log file path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\1_Data_Ingestion_Pipeline\logs\INGEST_CET_ENROLLMENTS_2026_11_08_14_35_52.log
+2026-11-08 14:35:53,040: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:35:53,040: Target database connection created  - <sqlite3.Connection object at 0x000001BAD498F5B0>
+2026-11-08 14:35:53,040: Source file  has been read! 34 rows found
+2026-11-08 14:35:53,040: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:35:53,040: DELETEing using the query: DELETE FROM enrollments WHERE enrollment_id = ?
+2026-11-08 14:35:53,040: IDs to delete: [(1,), (2,), (3,), (4,), (5,), (6,), (7,), (8,), (9,), (10,), (11,), (12,), (13,), (14,), (15,), (16,), (17,), (18,), (19,), (20,), (21,), (22,), (23,), (24,), (25,), (26,), (27,), (28,), (29,), (30,), (31,), (32,), (33,), (34,)]
+2026-11-08 14:35:53,040: DELETE successful! 34 rows deleted
+2026-11-08 14:35:53,052: 15/01/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 14:35:53,052: 2024-01-15 - Parsed using the format %Y-%m-%d
+2026-11-08 14:35:53,054: 20 Jan 2024 - Parsed using the format %d %b %Y
+2026-11-08 14:35:53,054: 2024-01-25 - Parsed using the format %Y-%m-%d
+2026-11-08 14:35:53,054: 01-02-2024 - Parsed using the format %d-%m-%Y
+2026-11-08 14:35:53,054: 2024/02/01 - Parsed using the format %Y/%m/%d
+2026-11-08 14:35:53,055: 10 Feb 2024 - Parsed using the format %d %b %Y
+2026-11-08 14:35:53,055: 2024-02-15 - Parsed using the format %Y-%m-%d
+2026-11-08 14:35:53,056: 20/02/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 14:35:53,056: 2024-03-05 - Parsed using the format %Y-%m-%d
+2026-11-08 14:35:53,057: 15/03/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 14:35:53,057: 2024-03-20 - Parsed using the format %Y-%m-%d
+2026-11-08 14:35:53,057: 25 Mar 2024 - Parsed using the format %d %b %Y
+2026-11-08 14:35:53,058: 2024/04/01 - Parsed using the format %Y/%m/%d
+2026-11-08 14:35:53,058: 01-04-2024 - Parsed using the format %d-%m-%Y
+2026-11-08 14:35:53,059: 2024-04-05 - Parsed using the format %Y-%m-%d
+2026-11-08 14:35:53,059: 10/04/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 14:35:53,060: 2024-04-15 - Parsed using the format %Y-%m-%d
+2026-11-08 14:35:53,060: 22/04/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 14:35:53,061: 01 May 2024 - Parsed using the format %d %b %Y
+2026-11-08 14:35:53,061: 2023-02-29 - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 14:35:53,062: 2024/05/15 - Parsed using the format %Y/%m/%d
+2026-11-08 14:35:53,063: 20-05-2024 - Parsed using the format %d-%m-%Y
+2026-11-08 14:35:53,063: 25/05/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 14:35:53,064: 01 Jun 2024 - Parsed using the format %d %b %Y
+2026-11-08 14:35:53,064: 1900-06-10 - Parsed using the format %Y-%m-%d
+2026-11-08 14:35:53,065: 2024-06-15 - Parsed using the format %Y-%m-%d
+2026-11-08 14:35:53,065: 2024/06/20 - Parsed using the format %Y/%m/%d
+2026-11-08 14:35:53,066: 01-07-2024 - Parsed using the format %d-%m-%Y
+2026-11-08 14:35:53,066: 2024-07-01 - Parsed using the format %Y-%m-%d
+2026-11-08 14:35:53,067: 05 Jul 2024 - Parsed using the format %d %b %Y
+2026-11-08 14:35:53,068: 10/07/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 14:35:53,068: 2024-07-15 - Parsed using the format %Y-%m-%d
+2026-11-08 14:35:53,069: 2024-07-20 - Parsed using the format %Y-%m-%d
+2026-11-08 14:35:53,103: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:35:53,103: EXECUTEing the query: 
+                                                    CREATE TABLE IF NOT EXISTS enrollments_quarantine (
+                                                        enrollment_id INTEGER PRIMARY KEY,
+                                                        participant_id TEXT,
+                                                        participant_name TEXT,
+                                                        course_id TEXT,
+                                                        course_date TEXT,
+                                                        amount TEXT,
+                                                        subsidy TEXT,
+                                                        credits_used TEXT,
+                                                        Failed_Check TEXT,
+                                                        Record_Created_In_Job_ID TEXT,
+                                                        Record_Created_On TEXT
+                                                    )
+                                                
+2026-11-08 14:35:53,103: EXECUTE successful!
+2026-11-08 14:35:53,103: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:35:53,103: INSERTing using the query: INSERT INTO enrollments_quarantine (enrollment_id, participant_id, participant_name, course_id, course_date, amount, subsidy, credits_used, Failed_Check, Record_Created_In_Job_ID, Record_Created_On) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-11-08 14:35:53,103: INSERT unsuccessful!
+2026-11-08 14:35:53,119: Traceback (most recent call last):
+  File "C:\Users\tatil\AppData\Local\Temp\ipykernel_4668\2155386471.py", line 39, in execute_db_insert
+    cur.executemany(query, data)
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 11, and there are 8 supplied.
+

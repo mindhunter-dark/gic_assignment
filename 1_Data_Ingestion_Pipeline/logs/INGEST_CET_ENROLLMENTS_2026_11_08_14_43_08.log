@@ -1,0 +1,102 @@
+2026-11-08 14:43:09,018 - INFO: Job started at 2026_11_08_14_43_08
+2026-11-08 14:43:09,018 - INFO: Job ID - INGEST_CET_ENROLLMENTS_2026_11_08_14_43_08, Job Name - INGEST_CET_ENROLLMENTS
+2026-11-08 14:43:09,018 - INFO: Job Source - CSV file - enrollments, Job Destination - SQLite DB - courses/enrollments
+2026-11-08 14:43:09,019 - INFO: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:43:09,019 - INFO: Context Parameters:
+2026-11-08 14:43:09,019 - INFO: Root folder  - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment
+2026-11-08 14:43:09,019 - INFO: Source file path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\input\enrolments.csv
+2026-11-08 14:43:09,019 - INFO: Target db path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\data\output\courses.db
+2026-11-08 14:43:09,020 - INFO: Target table - enrollments
+2026-11-08 14:43:09,020 - INFO: Log file path - C:\Users\tatil\Dev\Assessments\GIC\gic_assignment\1_Data_Ingestion_Pipeline\logs\INGEST_CET_ENROLLMENTS_2026_11_08_14_43_08.log
+2026-11-08 14:43:09,139 - INFO: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:43:09,141 - INFO: Target database connection created  - <sqlite3.Connection object at 0x000001BAD4A59990>
+2026-11-08 14:43:09,143 - INFO: Source file  has been read! 34 rows found
+2026-11-08 14:43:09,143 - INFO: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:43:09,143 - INFO: DELETEing using the query: DELETE FROM enrollments WHERE enrollment_id = ?
+2026-11-08 14:43:09,143 - INFO: IDs to delete: [(1,), (2,), (3,), (4,), (5,), (6,), (7,), (8,), (9,), (10,), (11,), (12,), (13,), (14,), (15,), (16,), (17,), (18,), (19,), (20,), (21,), (22,), (23,), (24,), (25,), (26,), (27,), (28,), (29,), (30,), (31,), (32,), (33,), (34,)]
+2026-11-08 14:43:09,143 - INFO: DELETE successful! 34 rows deleted
+2026-11-08 14:43:09,143 - INFO: 15/01/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 14:43:09,143 - INFO: 2024-01-15 - Parsed using the format %Y-%m-%d
+2026-11-08 14:43:09,143 - INFO: 20 Jan 2024 - Parsed using the format %d %b %Y
+2026-11-08 14:43:09,143 - INFO: 2024-01-25 - Parsed using the format %Y-%m-%d
+2026-11-08 14:43:09,143 - INFO: 01-02-2024 - Parsed using the format %d-%m-%Y
+2026-11-08 14:43:09,143 - INFO: 2024/02/01 - Parsed using the format %Y/%m/%d
+2026-11-08 14:43:09,143 - INFO: 10 Feb 2024 - Parsed using the format %d %b %Y
+2026-11-08 14:43:09,143 - INFO: 2024-02-15 - Parsed using the format %Y-%m-%d
+2026-11-08 14:43:09,143 - INFO: 20/02/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 14:43:09,143 - INFO: 2024-03-05 - Parsed using the format %Y-%m-%d
+2026-11-08 14:43:09,143 - INFO: 15/03/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 14:43:09,143 - INFO: 2024-03-20 - Parsed using the format %Y-%m-%d
+2026-11-08 14:43:09,143 - INFO: 25 Mar 2024 - Parsed using the format %d %b %Y
+2026-11-08 14:43:09,143 - INFO: 2024/04/01 - Parsed using the format %Y/%m/%d
+2026-11-08 14:43:09,143 - INFO: 01-04-2024 - Parsed using the format %d-%m-%Y
+2026-11-08 14:43:09,143 - INFO: 2024-04-05 - Parsed using the format %Y-%m-%d
+2026-11-08 14:43:09,143 - INFO: 10/04/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 14:43:09,143 - INFO: 2024-04-15 - Parsed using the format %Y-%m-%d
+2026-11-08 14:43:09,143 - INFO: 22/04/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 14:43:09,143 - INFO: 01 May 2024 - Parsed using the format %d %b %Y
+2026-11-08 14:43:09,143 - WARNING: 2023-02-29 - Cannot be parsed using any of the accepted formats! Try adding this to the list of accepted formats
+2026-11-08 14:43:09,143 - INFO: 2024/05/15 - Parsed using the format %Y/%m/%d
+2026-11-08 14:43:09,143 - INFO: 20-05-2024 - Parsed using the format %d-%m-%Y
+2026-11-08 14:43:09,143 - INFO: 25/05/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 14:43:09,154 - INFO: 01 Jun 2024 - Parsed using the format %d %b %Y
+2026-11-08 14:43:09,154 - INFO: 1900-06-10 - Parsed using the format %Y-%m-%d
+2026-11-08 14:43:09,154 - INFO: 2024-06-15 - Parsed using the format %Y-%m-%d
+2026-11-08 14:43:09,154 - INFO: 2024/06/20 - Parsed using the format %Y/%m/%d
+2026-11-08 14:43:09,155 - INFO: 01-07-2024 - Parsed using the format %d-%m-%Y
+2026-11-08 14:43:09,156 - INFO: 2024-07-01 - Parsed using the format %Y-%m-%d
+2026-11-08 14:43:09,156 - INFO: 05 Jul 2024 - Parsed using the format %d %b %Y
+2026-11-08 14:43:09,156 - INFO: 10/07/2024 - Parsed using the format %d/%m/%Y
+2026-11-08 14:43:09,156 - INFO: 2024-07-15 - Parsed using the format %Y-%m-%d
+2026-11-08 14:43:09,156 - INFO: 2024-07-20 - Parsed using the format %Y-%m-%d
+2026-11-08 14:43:09,192 - INFO: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:43:09,192 - INFO: EXECUTEing the query: 
+                                                    CREATE TABLE IF NOT EXISTS enrollments_quarantine (
+                                                        enrollment_id TEXT,
+                                                        participant_id TEXT,
+                                                        participant_name TEXT,
+                                                        course_id TEXT,
+                                                        course_date TEXT,
+                                                        amount TEXT,
+                                                        subsidy TEXT,
+                                                        credits_used TEXT,
+                                                        Failed_Check TEXT,
+                                                        Record_Created_In_Job_ID TEXT,
+                                                        Record_Created_On TEXT
+                                                    )
+                                                
+2026-11-08 14:43:09,199 - INFO: EXECUTE successful!
+2026-11-08 14:43:09,200 - INFO: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:43:09,200 - INFO: INSERTing using the query: INSERT INTO enrollments_quarantine (enrollment_id, participant_id, participant_name, course_id, course_date, amount, subsidy, credits_used, Failed_Check, Record_Created_In_Job_ID, Record_Created_On) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-11-08 14:43:09,205 - INFO: INSERT successful! 2 rows inserted
+2026-11-08 14:43:09,205 - INFO: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:43:09,205 - INFO: INSERTing using the query: INSERT INTO enrollments (enrollment_id, participant_id, participant_name, course_id, course_date, amount, subsidy, credits_used) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+2026-11-08 14:43:09,205 - INFO: INSERT successful! 32 rows inserted
+2026-11-08 14:43:09,205 - INFO: Pipeline complete! Exiting...
+2026-11-08 14:44:58,041 - INFO: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:44:58,041 - INFO: Running the SELECT query: SELECT * FROM enrollments
+2026-11-08 14:44:58,042 - WARNING: SELECT unsuccessful!
+2026-11-08 14:44:58,055 - ERROR: Traceback (most recent call last):
+  File "C:\Users\tatil\AppData\Local\Temp\ipykernel_4668\2155386471.py", line 23, in execute_db_select
+    df = pd.read_sql_query(query, conn)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tatil\anaconda3\Lib\site-packages\pandas\io\sql.py", line 497, in read_sql_query
+    return pandas_sql.read_query(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tatil\anaconda3\Lib\site-packages\pandas\io\sql.py", line 2766, in read_query
+    cursor = self.execute(sql, params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tatil\anaconda3\Lib\site-packages\pandas\io\sql.py", line 2700, in execute
+    cur = self.con.cursor()
+          ^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+
+2026-11-08 14:46:09,452 - INFO: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:46:09,452 - INFO: Running the SELECT query: SELECT * FROM enrollments
+2026-11-08 14:46:09,470 - INFO: SELECT successful! 32 rows returned
+2026-11-08 14:46:19,431 - INFO: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:46:19,442 - INFO: Running the SELECT query: SELECT * FROM enrollments
+2026-11-08 14:46:19,445 - INFO: SELECT successful! 32 rows returned
+2026-11-08 14:47:06,886 - INFO: ----------------------------------------------------------------------------------------------------
+2026-11-08 14:47:06,886 - INFO: Running the SELECT query: SELECT * FROM enrollments_quarantine
+2026-11-08 14:47:06,889 - INFO: SELECT successful! 2 rows returned
