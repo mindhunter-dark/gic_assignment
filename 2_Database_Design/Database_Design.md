@@ -1,5 +1,5 @@
 Bronze layer:::
-Description::
+Design::
 -- We should strive to keep the bronze layer as close to the source as possible. Other than
     metadata columns like record_created_on and record_source, we should refrain from creating any business columns or performing transformations on the data
 -- The data is also to be appended to the tables and not overwritten so that we have exact
@@ -16,7 +16,7 @@ course:
 -- prerequisites nvarchar
 -- record_created_on timestamp
 -- record_source nvarchar
-enrolment:
+enrollment:
 -- enrollment_id nvarchar
 -- participant_id nvarchar
 -- participant_name nvarchar
@@ -31,15 +31,15 @@ enrolment:
 
 Silver layer:::
 Assumptions::
--- One enrollment id will only have one course_id attached to it. In other words, enrollees
-    will have to enroll to two different courses separately
+-- One enrollment_id will only have one course_id attached to it. In other words, enrollees
+    will have to enroll to two different courses separately (with different enrollment_ids)
 
-Description::
+Design::
 Schema::
 -- We will perform most of the transformations, cleaning steps and data quality checks in 
     the processing step between Bronze and Silver layers. We also have the opportunity to
     normalize the tables for a cleaner schema
--- A data model consisting of dimension and fact tables, with the enrolments fact table 
+-- A data model consisting of dimension and fact tables, with the enrollments fact table 
     binding the dimensions to the measures (amount, subsidy and credits_used) seems the cleanest way to go. This schema also keeps the data normalized
 -- The fact table holds all the key measures (amount, subsidy and credits_used) and binds 
     these to the dimensions using the ids (participant_id, course_id and course_date_id).
@@ -54,6 +54,12 @@ Schema::
 -- I would keep the two metadata columns
     created in the bronze layer for better traceability even though there is a slight 
     overhead on storage
+-- While processing the data from the bronze tables, we may encounter a lot of "duplicates"
+    as we append the data to these tables rather than overwriting it. Hence, there may 
+    exist a row for the same course in the course table for every ingestion we do. We need
+    to de-duplicate the data from the bronze layer by using the row_number function
+    partitioned on the respective primary keys of the table and selecting the latest 
+    record from each partition using the record_created_on field
 Data Quality Checks::
 -- These happen in between the Bronze and Silver layers. Any records that fail these checks
     may have to be quarantined and alerted to the source for rectification
@@ -65,13 +71,10 @@ Data Quality Checks::
         -- If fails, alert to source but continue ingesting this record into Silver as this 
             field may not be too useful when reporting KPIs
 -- In table participant:
-    -- Check each enrolment_id for a valid value (integer and not null)
+    -- Check each enrollment_id for a valid value (integer and not null)
         -- If fails, quarantine and alert to source
     -- Check each participant_id for a valid value (integer and not null)
-        -- If fails, alert to source but continue ingesting this record into Silver. Can use
-            a placeholder id of -1 for all such records with this field missing. The 
-            participant name can be 'Unknown'. Seed this record into the dim_participant 
-            table
+        -- If fails, quarantine and alert to source
     -- Check each course_id for a valid value (integer, not null and present in    
         dim_course)
         -- If fails, alert to source but continue ingesting this record into Silver. Can use
@@ -94,7 +97,7 @@ Transformations::
     -- In table dim_course
         -- course_id to be casted as an integer (from course)
     -- In table dim_participant
-        -- participant_id to be casted as an integer (from enrolment)
+        -- participant_id to be casted as an integer (from enrollment)
     -- In table map_prerequisite
         -- Create the field prerequisite_id (Surrogate key to act as a primary key for the 
             table, auto increment)
@@ -102,11 +105,11 @@ Transformations::
             individual prerequisite ids and then a row to be created for each such id and cast this id to an integer (from course))
     -- Create table ref_date
         -- Create once at the start of/before pipeline creation and use subsequently
-    -- In table fact_enrolment
-        -- enrolment_id to be casted as an integer (from enrolment)
-        -- participant_id to be casted as an integer (from enrolment)
-        -- course_id to be casted as an integer (from enrolment)
-        -- Create the field course_date_id (Parse the course_date field from enrolment into 
+    -- In table fact_enrollment
+        -- enrollment_id to be casted as an integer (from enrollment)
+        -- participant_id to be casted as an integer (from enrollment)
+        -- course_id to be casted as an integer (from enrollment)
+        -- Create the field course_date_id (Parse the course_date field from enrollment into 
             a date. Then lookup this field to date from ref_date to get the field)
         -- amount, subsidy and credits_used to be casted as a float (from enrolemnt)
         -- Create the field amount_paid_by_enrollee (using the formula:
@@ -139,12 +142,12 @@ map_prerequisite:
 -- record_source nvarchar (From bronze)
 
 Reference tables::
-ref_date
+ref_date:
 -- date_id integer (Surrogate Key)
 -- date date
 
 Fact tables::
-fact_enrolment
+fact_enrollment:
 -- enrollment_id integer (Primary Key)
 -- participant_id integer (Foreign Key from dim_participant)
 -- course_id integer (Foreign Key from dim_course)
@@ -156,3 +159,126 @@ fact_enrolment
 -- record_created_on timestamp
 -- record_created_on_bronze timestamp (From bronze)
 -- record_source nvarchar (From bronze)
+
+Gold Layer:::
+Notes::
+-- The design of the gold layer largely depends on the business needs. Each specific 
+    business need may need a separate gold layer table. Although, we can try to merge
+    different needs into a single table is they require similar fields
+-- For faster analytics and data-serving, we will need pre-aggregated and de-normalized     
+    tables. We can stray away from the rigidity of the Silver layer and think about better column abstacrtion as some of the fields in the Silver layer may not be relevant to the 
+    business users
+-- For efficient querying and performance optimization, we can index the tables in the 
+    Silver and Gold layers on frequently used columns and partition them
+    -- In our gold tables below, the course_joined_year + course_joined_month can be a
+        good way to partition the tables
+
+Questions to Answer::
+-- Let's consider the following questions to solve and then we can design the gold layer 
+    tables which can be used to answer these
+-- 1. The user wants to see the metrics across the years broken down by calendar 
+    month
+Tables::
+monthly_performace:
+-- course_joined_year integer
+-- course_joined_month string
+-- total_amount float
+-- subsidy float
+-- credits_used float
+-- amount_paid_by_enrollee float
+-- no_of_enrollments int
+-- no_of_unique_enrollments int
+-- no_of_courses int
+-- no_of_participants int
+Design::
+-- Once we have the schema of the table in mind, we can work backwards to build the table
+    from the existing Silver layer tables
+-- Inner join fact_enrollment to ref_date on course_date_id and date_id
+-- Derive the course_joined_year and course_joined_month using the 'date' field
+    from ref_date
+-- Filter out unknown courses using course_id = -1 if the user wants the numbers to have 
+    absolute certainity on where they originate from
+-- Aggregate on course_joined_year and course_joined_month and derive the following
+    -- total_amount as sum of amount
+    -- subsidy as sum of subsidy
+    -- credits_used as sum of credits_used
+    -- amount_paid_by_enrollee as sum of amount_paid_by_enrollee
+    -- no_of_enrollments as count distinct of enrollment_id
+    -- no_of_unique_enrollments as count distinct of enrollment_id + participant_id
+    -- no_of_courses as count distinct of course_id
+    -- no_of_participants as count distinct of participant_id
+
+-- 2. The user wants to see the performance of each course over a time period
+Tables::
+course_360:
+-- course_joined_year integer
+-- course_joined_month string
+-- course_id integer
+-- course_name nvarchar
+-- course_description nvarchar
+-- total_amount float
+-- subsidy float
+-- credits_used float
+-- amount_paid_by_enrollee float
+-- no_of_enrollments int
+-- no_of_unique_enrollments int
+-- no_of_participants int
+Design:
+-- Inner Join fact_enrollment to ref_date on course_date_id and date_id
+-- Derive the course_joined_year and course_joined_month using the 'date' field
+    from ref_date
+-- Filter out unknown courses using course_id = -1 if the user wants the numbers to have 
+    absolute certainity on where they originate from
+-- Inner Join the result to dim_course on course_id
+-- Aggregate on 
+    course_joined_year,
+    course_joined_month,
+    course_id,
+    course_name and
+    course_description
+    and derive the following
+    -- total_amount as sum of amount
+    -- subsidy as sum of subsidy
+    -- credits_used as sum of credits_used
+    -- amount_paid_by_enrollee as sum of amount_paid_by_enrollee
+    -- no_of_enrollments as count distinct of enrollment_id
+    -- no_of_unique_enrollments as count distinct of enrollment_id + participant_id
+    -- no_of_participants as count distinct of participant_id
+
+-- 3. The user wants to analyze the habits of different participants
+participant_360:
+-- course_joined_year integer
+-- participant_id integer
+-- participant_name nvarchar
+-- total_amount float
+-- subsidy float
+-- credits_used float
+-- amount_paid_by_enrollee float
+-- no_of_enrollments int
+-- no_of_unique_enrollments int
+-- no_of_courses int
+Design:
+-- Inner Join fact_enrollment to ref_date on course_date_id and date_id
+-- Derive the course_joined_year using the 'date' field from ref_date
+-- Inner Join the result to dim_participant on participant_id
+-- Aggregate on 
+    course_joined_year,
+    participant_id and
+    participant_name
+    and derive the following
+    -- total_amount as sum of amount
+    -- subsidy as sum of subsidy
+    -- credits_used as sum of credits_used
+    -- amount_paid_by_enrollee as sum of amount_paid_by_enrollee
+    -- no_of_enrollments as count distinct of enrollment_id
+    -- no_of_unique_enrollments as count distinct of enrollment_id + participant_id
+    -- no_of_courses as count distinct of course_id
+
+Final thoughts::
+-- Of course, this is only a small fraction of what can be done in the Data Lake/Medallion 
+    gold layer. This layer should be highly cutomizable and rightfully so as the business 
+    needs are constantly evolving and so should the layer that feeds reporting and 
+    analyses
+-- The gold layer may have a lot of tables, each created for a different business facet 
+    (Sales, Marketing, Planning etc.,.) and the access to the tables may only be granted to 
+    the teams that are allowed to view the data within them
