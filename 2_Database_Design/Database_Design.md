@@ -34,8 +34,8 @@ Assumptions::
 -- One enrollment_id will only have one course_id attached to it. In other words, enrollees
     will have to enroll to two different courses separately (with different enrollment_ids)
 
-Design::
-Schema::
+Processing from Bronze to Silver::
+Notes::
 -- We will perform most of the transformations, cleaning steps and data quality checks in 
     the processing step between Bronze and Silver layers. We also have the opportunity to
     normalize the tables for a cleaner schema
@@ -63,6 +63,16 @@ Schema::
 Data Quality Checks::
 -- These happen in between the Bronze and Silver layers. Any records that fail these checks
     may have to be quarantined and alerted to the source for rectification
+-- Whenever we quarantine a record in the flow below, we do not propagate it to the next
+    step of the pipeline (in this case, from Bronze to Silver), and hold it in a quarantine
+    table in the Bronze/Silver layer. For this example, let's create the tables in the
+    Silver layer
+-- Please find the quarantine tables' definition at the end of the Silver layer defintion.
+    The only additional field would be the 'failed_check' field which contains the Data 
+    Quality check's description and why that particular row failed this check. Only
+    quarantined rows will exist in these tables. A row in a bronze table can have multiple
+    rows in its quarantine table if it fails multiple checks
+
 -- In table course:
     -- Check each course_id for a valid value (integer and not null)
         -- If fails, quarantine and alert to source
@@ -159,6 +169,31 @@ fact_enrollment:
 -- record_created_on timestamp
 -- record_created_on_bronze timestamp (From bronze)
 -- record_source nvarchar (From bronze)
+
+Quarantine tables::
+qua_course:
+-- course_id nvarchar
+-- name nvarchar
+-- description nvarchar
+-- prerequisites nvarchar
+-- failed_check nvarchar
+-- record_created_on timestamp
+-- record_created_on_bronze timestamp (From bronze)
+-- record_source nvarchar (From bronze)
+qua_enrollment:
+-- enrollment_id nvarchar
+-- participant_id nvarchar
+-- participant_name nvarchar
+-- course_id nvarchar
+-- course_date nvarchar
+-- amount nvarchar
+-- subsidy nvarchar
+-- credits_used nvarchar
+-- failed_check nvarchar
+-- record_created_on timestamp
+-- record_created_on_bronze timestamp (From bronze)
+-- record_source nvarchar (From bronze)
+
 
 Gold Layer:::
 Notes::
