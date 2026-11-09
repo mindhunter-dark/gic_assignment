@@ -360,4 +360,4 @@
 
 ## 4 - Notes
 
-- This document was prettified using AI. The entire text was written by me. [Conversation Link](https://chatgpt.com/share/6af17ccb-0f50-83ec-8e46-6992754e4e1d)
+- This document was prettified using [ChatGPT](https://chatgpt.com/share/6af17ccb-0f50-83ec-8e46-6992754e4e1d). The entire text was written by me.
