@@ -71,8 +71,8 @@ Design:::
         -- Are we getting enough concurrency out of the job on these partitions?
     -- We upload these files to an S3 bucket (say, s3_bucket_name/input/courses_1.csv,      
         courses_2.csv etc.,.)
--- Next, we craete the Transform job
-    -- There are a few important configuration settings that need to be made when creating
+-- Next, we create the Transform job
+    -- There are a few important configuration settings that need to be set when creating
         then job
         -- Job Level
             -- No of workers (instances)
@@ -83,6 +83,8 @@ Design:::
                 -- s3_bucket_name/input/
             -- The s3 bucket output path
                 -- s3_bucket_name/output/
+                -- The ouptut files will be stored here at the end of the job run.
+                    One input file will generate one output file
             -- SplitLine
                 -- Set to Line so that AWS can split a single csv file into multiple
                     mini-batches
@@ -98,6 +100,30 @@ Design:::
                 -- Max size of the mini-batch created by AWS
                 -- MaxConcurrentTransforms * MaxPayloadInMB cannot be greater than 100 MB
                 -- We can set this to 10 MB so that the limit is still met
+    -- These are all starting parameters and will need to be tweaked based on the   
+        acceptable timeframes to complete the job and whether the infrastructure can
+        process >95% of the records successfully without any timeout and other errors
+    -- The Worker type, MaxConcurrentTransforms and MaxPayloadInMB will need to be  
+        modified to test for performance, error rate and cost-effectiveness by running 
+        sample Batch Transform jobs (with maybe 5% of the data) with variations of these parameters. Once the performance, error rates and the cost-effectiveness are in the 
+        acceptable ranges, then that set of varibales can be used for the actual job
+-- This job needs to be triggered once. This can be done from an AWS CLI or on the UI   
+    itself. Hence, a separate trigger from AWS Lambda or a Glue job is not needed
+-- We will need to create a Glue job along with an AWS Step function listener on the 
+    s3_bucket_name/output/ folder to look for output files. Whenever they are
+    dropped in the folder, our Glue job using PySpark ingests the files into an Iceberg 
+    table (assuming that our DB layer is built on Iceberg). If our database is stored 
+    externally (on-premise for example), then we may have to further sub-divide the each
+    file and export them to that server
+-- For the incremental job, we run it on a schedule once a day (let's say at 1 AM). This 
+    job collates all the course_descriptions that have changed or were added during the 
+    previous day, batches them up into N-course chunks (N being the maximum that the API
+    endpoint can handle without timing out after 30 seconds) and calls the now-modified API 
+    endpoint recursively until all the batches are processed. If we expect 10000 courses to
+    be added or modified each day, and N resolves to 100 after performance testing, then
+    the pipeline now makes 100 calls (30s max each). This will take about an hour, which is
+    acceptable
+
             
             
 
