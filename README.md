@@ -38,3 +38,11 @@
       - The database provided in the case-study with pre-created tables
       - Will be written to from data_ingestion.ipynb
 - requirements.txt -> The list of python packages required for the Binder env
+
+### How to execute
+The Jupyter notebooks can be run **online** in a **web browser** by clicking on the link below
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mindhunter-dark/gic_assignment/HEAD?urlpath=%2Fdoc%2Ftree%2F1_Data_Ingestion_Pipeline%2Fdata_ingestion.ipynb)
+
+**Notes**
+1. Binder may take some time to load the online environment
