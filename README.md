@@ -1,2 +1,39 @@
-# gic_assignment
-Init the repo
+# About
+[Case study](https://github.com/casestudy-2026/assessment/tree/main) from GIC
+This repo attempts to solve the case study above
+Created by Likhith Tati
+Timeframe: 2026-11-07 to 2026-11-09
+
+### Tools Used
+- Jupyter Notebook (.ipynb)
+- SQLite
+- Markdown
+- ChatGPT
+
+### Folder Structure
+- 1_Data_Ingestion_Pipeline -> Contains the data ingestion pipeline as a .ipynb notebook and a logs folder 
+  - data_ingestion.ipynb
+    - The data ingestion pipeline as a .ipynb notebook
+- 2_Database_Design -> The database design document to solve Section 2 in the case study
+  - Database_Design_Document.md
+    - Document created by me to showcase the design, explain my thinking and reasoning behind the design
+  - Medallion_Architecture_and_ERD (AI).md
+    - Medallion Architecture and ERD diagrams created by [ChatGPT](https://chatgpt.com/share/6af0a786-6868-83ec-b1d7-c0038305c62d) after reading Database_Design_Document.md
+    - It is a summary of **Database_Design_Document.md** in pictorial form
+- 3_SQL_Reporting -> To solve Section 3 in the case study.
+  - sql_reporting.ipynb
+    - The .ipynb file which has the sql reporting query and the assumptions I made to solve for the answer
+- 4_Solution_Design -> The solution design document to solve Section 4 in the case study
+  - Solution_Design_Document.md
+    - Document created by me to showcase the design, explain my thinking and reasoning behind the design
+  - Architecture_Diagram (AI)
+    - Architecture diagram created by [ChatGPT](https://chatgpt.com/share/6af18052-67e8-83ec-b2e0-cbf7a42d7521) after reading Solution_Design_Document.md
+    - It is a summary of **Solution_Design_Document.md** in pictorial form
+- data -> The data folder used by data_ingestion.ipynb and sql_reporting.ipynb
+  - input
+    - enrolments.csv
+      - The input file
+  - output
+    - courses.db
+      - The database provided in the case-study with pre-created tables
+      - Will be written to from data_ingestion.ipynb
