@@ -1,8 +1,8 @@
 # About
-[Case study](https://github.com/casestudy-2026/assessment/tree/main) from GIC
-This repo attempts to solve the case study above
-Created by Likhith Tati
-Timeframe: 2026-11-07 to 2026-11-09
+- [Case study](https://github.com/casestudy-2026/assessment/tree/main) from GIC
+- This repo attempts to solve the case study above
+- Created by Likhith Tati
+- Timeframe: 2026-11-07 to 2026-11-09
 
 ### Tools Used
 - Jupyter Notebook (.ipynb)
@@ -37,3 +37,4 @@ Timeframe: 2026-11-07 to 2026-11-09
     - courses.db
       - The database provided in the case-study with pre-created tables
       - Will be written to from data_ingestion.ipynb
+- requirements.txt -> The list of python packages required for the Binder env
