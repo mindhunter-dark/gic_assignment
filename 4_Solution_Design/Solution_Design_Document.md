@@ -1,10 +1,10 @@
-# The problem
+# 1 - The problem
 
 Assuming that you are working with a courses table that contains 200 million records. Each course has a description, and your Data Scientist has built a machine learning model that reads a course description that predicts the skillsets required for that course. This model has been deployed as an AWS SageMaker endpoint, meaning your pipeline calls the model via an API to get predictions.
 
 After running the pipeline, you realise it will take 2 months to process all 200 million records — which is far too long. Your task is to identify the bottleneck and explain how you would optimise this pipeline. Consider both how the SageMaker endpoint is being served, and how the script calling the endpoint is written.
 
-# Considerations
+# 2 - Considerations
 
 - Let's calculate how many rows the current pipeline is processing every second (200 * pow(10, 6)) / (60 * 86400) = ~39 rows / sec. This needs to be improved
 - The problem states that the ML model reads a course description and predicts the 
@@ -49,7 +49,7 @@ After running the pipeline, you realise it will take 2 months to process all 200
   we don't really need real-time predictions. We are okay with the low latency in this
   case. However, if we had a use case to process all the courses in near real-time (max of 15 mins), then we can go with the former option
 
-# Design
+# 3 - Design
 
 - We will run this pipeline as an ad-hoc job once, and then as an incremental job
   subsequently
