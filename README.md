@@ -9,6 +9,7 @@
 - SQLite
 - Markdown
 - ChatGPT
+- Binder
 
 ### Folder Structure
 - 1_Data_Ingestion_Pipeline -> Contains the data ingestion pipeline as a .ipynb notebook and a logs folder 
