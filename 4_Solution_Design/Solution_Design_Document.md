@@ -78,20 +78,23 @@ Design:::
             -- No of workers (instances)
                 -- This is generally be the no of csv files we have, 40
             -- Worker type
-                -- We can go with m1.xlarge as we need more concurrency            
+                -- We need to use a compute-optimized machine as we are dealing
+                    with a parallelize-heavy workload
+                -- We can go with c9gd.2xlarge. It has 8 cores and 8 virtual CPUs          
             -- The S3 bucket input path
                 -- s3_bucket_name/input/
             -- The s3 bucket output path
                 -- s3_bucket_name/output/
                 -- The ouptut files will be stored here at the end of the job run.
                     One input file will generate one output file
-            -- SplitLine
+            -- SplitType
                 -- Set to Line so that AWS can split a single csv file into multiple
                     mini-batches
         -- Worker Level
             -- MaxConcurrentTransforms
                 -- The no of concurrent invocations each worker makes to the model
-                -- We can use 10 concurrent invocations as a start
+                -- We can use 5 concurrent invocations as a start as the c9gd.2xlarge 
+                    machine has 8 cores
             -- BatchStrategy
                 -- Set to 'MultiRecord' to batch together multiple records in a 
                     mini-batch. AWS will fit as many as it can while respecting
@@ -99,7 +102,9 @@ Design:::
             -- MaxPayloadInMB
                 -- Max size of the mini-batch created by AWS
                 -- MaxConcurrentTransforms * MaxPayloadInMB cannot be greater than 100 MB
-                -- We can set this to 10 MB so that the limit is still met
+                -- We can set this to 6 MB (the default) so that the limit is still met
+                    and we don't have the problem of each mini-batch having too many
+                    records
     -- These are all starting parameters and will need to be tweaked based on the   
         acceptable timeframes to complete the job and whether the infrastructure can
         process >95% of the records successfully without any timeout and other errors
@@ -109,12 +114,22 @@ Design:::
         acceptable ranges, then that set of varibales can be used for the actual job
 -- This job needs to be triggered once. This can be done from an AWS CLI or on the UI   
     itself. Hence, a separate trigger from AWS Lambda or a Glue job is not needed
--- We will need to create a Glue job along with an AWS Step function listener on the 
-    s3_bucket_name/output/ folder to look for output files. Whenever they are
-    dropped in the folder, our Glue job using PySpark ingests the files into an Iceberg 
-    table (assuming that our DB layer is built on Iceberg). If our database is stored 
-    externally (on-premise for example), then we may have to further sub-divide the each
-    file and export them to that server
+-- We will need to create a Glue job along with an AWS Step function + AWS Event  
+    Bridge listener on the s3_bucket_name/output/ folder to look for output files. Whenever 
+    they are dropped in the folder, our Glue job using PySpark ingests the files into an 
+    Iceberg table (assuming that our DB layer is built on Iceberg). If our database is 
+    stored externally (on-premise for example), then we may have to further sub-divide the 
+    each file and export them to that server
+-- Based on the above parameters, ChatGPT estimates that the job will take around 14 hours 
+    to complete execution [Conversation Link](https://chatgpt.com/share/6af1746a-40c8-83ec-819a-da00bcabbd72)
+-- We also need to be wary of errors during job execution. As the Batch Transform job 
+    does not produce an output if it encounters an error during a file's execution, the
+    Data Scientist may need to include a try catch mechanism in the endpoint definition
+    to create a dummy output file in s3 with the error messsage included. At the end of the 
+    Batch Transform job's execution, we can retry with just the errored-out files. We can
+    also consider smaller file sizes (2 million records, 100 files) in the main job to 
+    reduce the overhead to re-process errored-out files as even one record may derail the
+    output of already-processed 100s of thousands of records
 -- For the incremental job, we run it on a schedule once a day (let's say at 1 AM). This 
     job collates all the course_descriptions that have changed or were added during the 
     previous day, batches them up into N-course chunks (N being the maximum that the API
@@ -123,9 +138,3 @@ Design:::
     be added or modified each day, and N resolves to 100 after performance testing, then
     the pipeline now makes 100 calls (30s max each). This will take about an hour, which is
     acceptable
-
-            
-            
-
- 
-
