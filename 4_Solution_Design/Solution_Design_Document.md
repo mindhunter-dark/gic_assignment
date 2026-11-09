@@ -138,3 +138,7 @@ After running the pipeline, you realise it will take 2 months to process all 200
   be added or modified each day, and N resolves to 100 after performance testing, then
   the pipeline now makes 100 calls (30s max each). This will take about an hour, which is
   acceptable
+
+# 4 - Notes
+
+- This document was prettified using AI. The entire text was written by me. [Conversation Link](https://chatgpt.com/share/6af17ccb-0f50-83ec-8e46-6992754e4e1d)

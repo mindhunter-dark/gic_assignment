@@ -357,3 +357,7 @@
 - The gold layer may have a lot of tables, each created for a different business facet 
   (Sales, Marketing, Planning etc.,.) and the access to the tables may only be granted to 
   the teams that are allowed to view the data within them
+
+## 4 - Notes
+
+- This document was prettified using AI. The entire text was written by me. [Conversation Link](https://chatgpt.com/share/6af17ccb-0f50-83ec-8e46-6992754e4e1d)
